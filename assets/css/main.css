@@ -12138,13 +12138,13 @@ textarea {
 .footer__bg {
   background-size: cover;
   background-position: center;
-  padding: 120px 0;
+  padding: 50px 0;
 }
-@media (max-width: 767.98px) {
+/* @media (max-width: 767.98px) {
   .footer__bg {
-    padding: 100px 0;
+    padding: 30px 0;
   }
-}
+} */
 .footer__features {
   display: -webkit-box;
   display: -moz-box;
