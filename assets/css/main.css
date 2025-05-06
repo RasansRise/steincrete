@@ -2303,7 +2303,7 @@ textarea {
   padding: 0;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 0 0 0 auto;
 }
 @media (max-width: 1500px) {
   .tgmenu__navbar-wrap ul {
@@ -12198,7 +12198,7 @@ textarea {
   color: var(--tg-color-white-default);
 }
 .footer__top-three {
-  padding: 73px 120px 73px 80px;
+  padding: 73px 120px 40px 80px;
   border-bottom: 1px solid #272727;
 }
 @media (max-width: 1199.98px) {
@@ -12298,9 +12298,7 @@ textarea {
 .footer__logo {
   margin-bottom: 35px;
 }
-.footer__logo img {
-  max-height: 45px;
-}
+
 .footer__logo-two {
   margin-bottom: 0;
 }
