@@ -84,6 +84,19 @@
 /*=============================
 	Typography css start
 ===============================*/
+.overlay{
+  position: relative;
+}
+.overlay::after{
+  content:"";
+  display:block;
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(246, 99, 0,0.3);
+}
 body {
   font-family: var(--tg-body-font-family);
   font-size: var(--tg-body-font-size);
@@ -2832,6 +2845,7 @@ textarea {
   display: flex;
   align-items: flex-end;
 }
+
 @media (max-width: 1500px) {
   .slider__bg {
     min-height: 600px;
@@ -10123,11 +10137,11 @@ textarea {
   background: var(--tg-color-gray-2);
   margin-bottom: 25px;
 }
-.shop__item:hover .shop__thumb::before {
+/* .shop__item:hover .shop__thumb::before {
   height: 100%;
   opacity: 1;
   visibility: visible;
-}
+} */
 .shop__item:hover .shop__thumb .btn {
   opacity: 1;
   margin-top: 0;

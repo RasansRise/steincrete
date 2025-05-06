@@ -12,6 +12,8 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
+    <link href="assets/css/fancybox.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
@@ -308,8 +310,7 @@
                             <div class="col-xl-4 col-sm-6">
                                 <div class="shop__item">
                                     <div class="shop__thumb">
-                                        <img src="assets/img/product/shop_img01.png" alt="img">
-                                        <a href="shop-details.html" class="btn">View Product</a>
+                                        <a href="assets/img/product/shop_img01.png" data-fancybox data-caption="Single image"><img src="assets/img/product/shop_img01.png" alt="img"></a>
                                     </div>
                                     <div class="shop__content">
                                         <!-- <h6 class="price">(25×12×6)</h6> -->
@@ -714,10 +715,17 @@
     <script src="assets/js/tween-max.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/aos.js"></script>
+    <script src="assets/js/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+        });
+    </script>
     <script src="assets/js/main.js"></script>
     <script>
         SVGInject(document.querySelectorAll("img.injectable"));
     </script>
+    
 </body>
 
 </html>
