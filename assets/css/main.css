@@ -10227,6 +10227,11 @@ textarea {
   font-weight: 500;
   margin-bottom: 10px;
   text-transform: capitalize;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  gap:10px; 
 }
 @media (max-width: 1500px) {
   .shop__content .title {
