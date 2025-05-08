@@ -7404,6 +7404,10 @@ textarea {
   color: var(--tg-color-dark);
   transition: 0.5s;
 }
+.project__nav .factory-button{
+  background-color: var(--tg-theme-primary);
+  color:white;
+}
 .project__nav-two button {
   width: 80px;
   height: 80px;

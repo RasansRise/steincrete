@@ -614,11 +614,48 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <div class="video__img">
-                    <img src="assets/img/images/video poster.webp" alt="img">
-                    <a href="http://www.youtube.com/watch?v=1iIZeIy7TqM" class="play-btn popup-video"><i class="renova-play-2"></i></a>
+              <div class="swiper factory-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div >
+                          <img
+                            src="assets/img/slider/factory.webp"
+                            alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div >
+                          <img
+                            src="assets/img/slider/slider1.webp"
+                            alt="img"
+                        />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div >
+                          <img
+                            src="assets/img/slider/slider2.webp"
+                            alt="img"
+                        />
+                    </div>
+                  </div>
+                 
                 </div>
+                <div class="col-12 mt-5">
+                  <div class="project__nav">
+                    <button class="factory-button factory-button-prev">
+                      <i class="renova-left-arrow"></i>
+                    </button>
+                    <button class="factory-button factory-button-next">
+                      <i class="renova-right-arrow"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
             </div>
+            
         </div>
     </div>
 </section>
@@ -930,6 +967,17 @@
     </script>
     <script>
         document.querySelector('.year').innerHTML = new Date().getFullYear();
+    </script>
+    <script>
+      var projectSwiper = new Swiper('.factory-slider', {
+
+      loop: true,
+     
+      navigation: {
+          nextEl: ".factory-button-next",
+          prevEl: ".factory-button-prev",
+      },
+  });
     </script>
   </body>
 </html>
