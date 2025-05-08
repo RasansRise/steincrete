@@ -2105,7 +2105,7 @@ textarea {
   }
 }
 .tg-header__area.sticky-menu {
-  padding: 0 0;
+  padding: 20px 0;
 }
 @media (max-width: 1199.98px) {
   .tg-header__area.sticky-menu {
