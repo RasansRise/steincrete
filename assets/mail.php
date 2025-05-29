@@ -40,7 +40,7 @@
 
         // FIXME: Update this to your desired email address.
 
-        $recipient = "founder@stthemes.com";
+        $recipient = "gebraielmalak63@gmail.com";
 
 
 
