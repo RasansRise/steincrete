@@ -2,50 +2,74 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Sanitize and get the form fields
-    $name = strip_tags(trim($_POST["name"]));
-    $name = str_replace(array("\r", "\n"), array(" ", " "), $name);
+    // Get and sanitize form inputs
+    $name     = strip_tags(trim($_POST["name"] ?? ""));
+    $name     = str_replace(["\r", "\n"], [" ", " "], $name);
+    $phone    = trim($_POST["phone"] ?? "");
+    $address  = trim($_POST["address"] ?? "");
+    $quantity = trim($_POST["quantity"] ?? "");
+    $product  = trim($_POST["product"] ?? "");
+    $language = $_POST["language"] ?? "en"; // default language
 
-    $phone = trim($_POST["phone"]);
-    $address = trim($_POST["address"]);
-    $quantity = trim($_POST["quantity"]);
-    $product = trim($_POST["product"]);
-
-    // Check required fields
-    if (empty($name) || empty($phone) || empty($address) || empty($product)) {
+    // Validate required fields
+    if (empty($name) || empty($phone) || empty($address) ) {
         http_response_code(400);
-        echo "Please fill in all the required fields and try again.";
+        echo ($language === "ar") 
+            ? "من فضلك أكمل البيانات بشكل صحيح وحاول مرة أخرى." 
+            : "Please complete the form correctly and try again.";
         exit;
     }
 
-    // Email recipient
+    // Set recipient email
     $recipient = "gebraielmalak63@gmail.com";
 
-    // Email subject
-    $subject = "New Order from $name";
+    // Build the email subject and content based on language
+    if ($language === "ar") {
+        $subject = "رسالة جديدة من $name";
+        $email_content = "/// Johanspond \\\\\n\n";
+        $email_content .= "الاسم: $name\n";
+        $email_content .= "البريد الإلكتروني: $email\n";
+        $email_content .= "رقم الهاتف: $phone\n";
+        $email_content .= "العنوان: $address\n";
+        if (!empty($quantity)) {
+            $email_content .= "الكمية: $quantity\n";
+        }
+        if (!empty($product)) {
+            $email_content .= "المنتج: $product\n";
+        }
+    } else {
+        $subject = "New message from $name";
+        $email_content = "/// Johanspond \\\\\n\n";
+        $email_content .= "Name: $name\n";
+        $email_content .= "Email: $email\n";
+        $email_content .= "Phone: $phone\n";
+        $email_content .= "Address: $address\n";
+        if (!empty($quantity)) {
+            $email_content .= "Quantity: $quantity\n";
+        }
+        if (!empty($product)) {
+            $email_content .= "Product: $product\n";
+        }
+    }
 
-    // Email content
-    $email_content  = "/// New Order Received ///\n\n";
-    $email_content .= "Name: $name\n";
-    $email_content .= "Phone: $phone\n";
-    $email_content .= "Address: $address\n";
-    $email_content .= "Product: $product\n";
-    $email_content .= "Quantity: $quantity\n";
-
-    // Email headers
-    $email_headers = "From: Website Order <no-reply@example.com>";
+    // Build the email headers
+    $email_headers = "From: $name <$email>";
 
     // Send the email
     if (mail($recipient, $subject, $email_content, $email_headers)) {
         http_response_code(200);
-        echo "Thank you! Your order has been sent successfully.";
+        echo ($language === "ar") 
+            ? "✅ تم إرسال الرسالة بنجاح!" 
+            : "✅ Your message has been sent successfully!";
     } else {
         http_response_code(500);
-        echo "Oops! Something went wrong and we couldn't send your order.";
+        echo ($language === "ar") 
+            ? "❌ حدث خطأ أثناء الإرسال. حاول مرة أخرى لاحقًا." 
+            : "❌ Something went wrong. Please try again later.";
     }
 
 } else {
+    // Not a POST request
     http_response_code(403);
-    echo "There was a problem with your submission. Please try again.";
+    echo "Forbidden.";
 }
-?>
