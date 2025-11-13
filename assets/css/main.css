@@ -10296,6 +10296,7 @@ textarea {
 .shop__content .price del {
   color: #AAABAC;
 }
+
 .shop__content .title {
   font-size: 24px;
   font-weight: 500;
@@ -10306,6 +10307,9 @@ textarea {
   justify-content: space-between;
   align-items: center;
   gap:10px; 
+}
+html[lang="ar"] .shop__content .title,html[lang="ar"] .fancybox__caption{
+  direction: rtl;
 }
 @media (max-width: 1500px) {
   .shop__content .title {
