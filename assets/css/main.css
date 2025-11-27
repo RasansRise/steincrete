@@ -94,6 +94,9 @@ html[lang="ar"] {
 .overlay{
   position: relative;
 }
+.project-name{
+  color:var(--tg-theme-primary)
+}
 .overlay::after{
   content:"";
   display:block;
@@ -6752,10 +6755,10 @@ textarea {
   -o-transform: translateY(0);
   transform: translateY(0);
 }
-.project__item-two:hover .project__icon-two a {
+.project__item-two:hover .project__icon-two .icon {
   opacity: 1;
   visibility: visible;
-  transform: translateX(0);
+  transform: translate(50%,-50%);
 }
 .project__item-three {
   margin-bottom: 25px;
@@ -7337,7 +7340,7 @@ textarea {
   color: var(--tg-color-white-default);
   background: var(--tg-theme-primary);
 }
-.project__icon-two a {
+.project__icon-two .icon {
   width: 50px;
   height: 50px;
   display: -webkit-box;
@@ -7355,14 +7358,14 @@ textarea {
   background: var(--tg-color-white-default);
   font-size: 16px;
   position: absolute;
-  right: 30px;
-  top: 30px;
+  right: 50%;
+  top: 50%;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(30px);
+  /* transform: translate(-50%); */
   z-index: 2;
 }
-.project__icon-two a:hover {
+.project__icon-two .icon:hover {
   color: var(--tg-color-white-default);
   background: var(--tg-theme-primary);
 }
